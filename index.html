@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bohdan Ly | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+  </head>
+  <body>
+    <section id="lead">
+      <div id="lead-content">
+        <h1>Bohdan Ly</h1>
+        <h2>Software Engineer</h2>
+        <a href="#" class="btn-rounded-white">Download Resume</a>
+      </div>
+      <!-- End #lead-content -->
+
+      <div id="lead-overlay"></div>
+
+      <div id="lead-down">
+        <span>
+          <img src="chevron.svg" alt="go down"></i>
+        </span>
+      </div>
+      <!-- End #lead-down -->
+    </section>
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <div id="contact-form">
+        <form method="POST" action="https://formspree.io/email@email.com">
+          <input
+            type="hidden"
+            name="_subject"
+            value="Contact request from personal website"
+          />
+          <input type="email" name="_replyto" role="email" placeholder="Your email" required />
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <!-- End #contact-form -->
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="copyright">
+            <p>Copyright &copy; <span id="current-year"></span> Bohdan Ly.</p>
+            <script>
+                document.getElementById("current-year").innerHTML = new Date().getFullYear();
+            </script>
+          </div>
+          <div class="social">
+            <ul>
+              <li>
+                <a href="https://github.com/" target="_blank"
+                  ><img src="gh.svg" />
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/" target="_blank"
+                  ><img src="ig.svg" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="app.js"></script>
+</html>

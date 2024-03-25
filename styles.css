@@ -1,0 +1,325 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+
+    background: #1f1f1f;
+    color: #fff3c1;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+section {
+    overflow: hidden;
+    width: 100%;
+    max-width: 740px;
+    margin: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ff90119f;
+    outline: 1px solid #ff90119f;
+    border-radius: 10px;
+}
+
+a {
+    color: rgb(255, 243, 193);
+    font-style: unset;
+    text-decoration: none;
+    position: relative;
+}
+
+#lead {
+    height: 100vh;
+    position: relative;
+}
+
+#lead-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    align-items: start;
+}
+
+h1 {
+    font-size: 10em;
+    text-align: left;
+}
+
+h2 {
+    margin-left: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+#lead h2::before {
+    content: '>';
+    position: absolute;
+    left: -10px;
+    color: white;
+    transition: all 0.4s;
+    opacity: 0;
+}
+
+#lead h2:hover::before {
+    opacity: 1;
+}
+
+#lead a {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#lead a::before {
+    content: '>';
+    position: absolute;
+    left: -10px;
+    color: white;
+    transition: all 0.4s;
+    opacity: 0;
+}
+
+a:hover::before {
+    opacity: 1 !important;
+}
+
+#lead-down {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
+}
+
+#lead-down img {
+    width: 3rem;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+
+
+#contact h2 {
+    font-size: 2rem;
+}
+
+#contact-form {
+    display: flex;
+    justify-content: start;
+    margin-top: 2rem;
+    margin-left: 10px;
+}
+
+#contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+}
+
+textarea,
+input {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    color: #ededed;
+    line-height: 1.2;
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff3c1;
+    resize: none;
+    padding-bottom: 10px;
+}
+
+#contact-form button {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.2;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 8px 10px;
+    border: 1px solid #fff3c1;
+    color: #fff3c1;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#contact-form button:hover {
+    background: #fff3c1;
+    color: #1f1f1f;
+}
+
+footer {
+    max-width: 740px;
+    margin: auto;
+    padding: 4rem 10px;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social {
+    width: 50%;
+}
+
+.social ul {
+    display: flex;
+    gap: 2rem;
+    justify-content: end;
+}
+
+.social img {
+    width: 2rem;
+}
+
+canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
