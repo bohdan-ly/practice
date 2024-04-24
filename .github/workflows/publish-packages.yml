@@ -1,11 +1,9 @@
 name: Check
 
 on:
-  pull_request:
+  push:
     branches:
-      - master
-    types:
-      - closed
+      - "**"
 jobs:
   publish-grp:
     runs-on: ubuntu-latest
