@@ -7,6 +7,8 @@ on:
 jobs:
   publish-grp:
     runs-on: ubuntu-latest
+    outputs:
+      merged_branch: ${{ steps.set_stages.outputs.merged_branch }}
     steps:
       - uses: actions/checkout@v4
         with:
