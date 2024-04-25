@@ -16,10 +16,10 @@ jobs:
         id: set_stages
         shell: /usr/bin/bash -e {0}
         run: |
-        
+
           merged_branch=$(echo "${{ github.event.head_commit.message }}" | awk -F / '{print $3}' | grep -oE '[^/]+$')
-          echo "$branch_name"" > $GITHUB_OUTPUT
-  
+          echo "$merged_branch"" > $GITHUB_OUTPUT
+
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
