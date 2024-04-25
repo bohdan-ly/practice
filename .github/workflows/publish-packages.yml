@@ -16,7 +16,7 @@ jobs:
         id: set_stages
         shell: /usr/bin/bash -e {0}
         run: |
-            merged_branch=$(echo "${{ github.event.head_commit.message }}" | awk -F / '{ if($3) print $3 }' | grep -oE '^[^"]+$')
+            merged_branch=$(echo "${{ github.event.head_commit.message }}" | awk -F / '{ if(NF>=3) print $3 }' | grep -oE '^[^"]+$')
             echo "::set-output name=merged_branch::$merged_branch"
       - name: Dump GitHub context
         env:
