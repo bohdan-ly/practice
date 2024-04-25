@@ -22,7 +22,7 @@ jobs:
           clean_message=$(echo "${{ github.event.head_commit.message }}" | sed 's/\s//g')
           echo "$clean_message"
           merged_branch=$(echo "$clean_message" | grep -oE '[^/]+$')
-          echo "$merged_branch" >> $GITHUB_OUTPUT
+          echo "::set-output name=merged_branch::$merged_branch"
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
