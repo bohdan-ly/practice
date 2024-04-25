@@ -16,7 +16,11 @@ jobs:
         id: set_stages
         shell: /usr/bin/bash -e {0}
         run: |
-
+          if command -v awk &>/dev/null; then
+              echo "awk is available"
+          else
+              echo "awk is not available"
+          fi
           merged_branch=$(echo "${{ github.event.head_commit.message }}" | awk -F / '{ if($3) print $3 }' | grep -oE '[^/]+$')
           echo "$merged_branch"" > $GITHUB_OUTPUT
 
