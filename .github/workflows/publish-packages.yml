@@ -17,7 +17,7 @@ jobs:
         shell: /usr/bin/bash -e {0}
         run: |
             set +e
-            merged_branch=$(echo "${{ github.event.head_commit.message }}" | nawk -F / '{ if(NF>=3) print $3 }' | grep -oE '^[^"]+$')
+            merged_branch=$(echo "${{ github.event.head_commit.message }}" | nawk -F / '{ if(NF>=3) print $3 }' || echo "${{ github.event.head_commit.message }}" | grep -oE '^[^"]+$')
             echo "::set-output name=merged_branch::$merged_branch"
       - name: Dump GitHub context
         env:
