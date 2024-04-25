@@ -15,13 +15,15 @@ jobs:
       - name: Set stages list
         id: set_stages
         run: |
-          merged_branch=$(git log -1 --merges --pretty=format:"%s" 2>/dev/null | grep -oE '(?<=Merge pull request #[0-9]+ from ).*' | head -n 1)
+          merged_branch=$(${{ github.event.head_commit.message }} | grep -oE '(?<=Merge pull request #[0-9]+ from ).*' | head -n 1)
           echo "$merged_branch" >> $GITHUB_OUTPUT
           echo "$merged_branch"
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: |
+          echo "${{github.event.head_commit.id}}"
+          echo "$GITHUB_CONTEXT"
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
@@ -30,4 +32,3 @@ jobs:
         env:
           JOB_CONTEXT: ${{ toJson(job) }}
         run: echo "$JOB_CONTEXT"
-
