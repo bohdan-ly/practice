@@ -17,7 +17,7 @@ jobs:
         shell: /usr/bin/bash -e {0}
         run: |
         
-          merged_branch=$(echo "${{ github.event.head_commit.message }}" | grep -oE '^Merge pull request #[0-9]+ from ${{github.repository_owner}}\/([^[:space:]]*)' | grep -oE '[^/]+$')
+          merged_branch=$(echo "${{ github.event.head_commit.message }}" | awk -F / '{print $3}' | grep -oE '[^/]+$')
           echo "$branch_name"" > $GITHUB_OUTPUT
   
       - name: Dump GitHub context
