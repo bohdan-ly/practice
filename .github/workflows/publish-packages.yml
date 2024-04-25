@@ -14,11 +14,11 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Set stages list
         id: set_stages
-        run: |
-          merged_branch=$(echo "${{ github.event.head_commit.message }}" | sed -n 's/^Merge pull request #[0-9]\+ from ${{github.repository_owner}}\/\([^[:space:]]*\).*$/\1/p' | head -n 1)
-          echo "Extracted Branch Name: $merged_branch"
-          echo "\"$branch_name\"" >> $GITHUB_OUTPUT
         shell: /usr/bin/bash -e {0}
+        run: |
+
+          merged_branch=$(echo "${{ github.event.head_commit.message }}" | awk -F / '{ if($3) print $3 }' | grep -oE '[^/]+$')
+          echo "$merged_branch"" > $GITHUB_OUTPUT
 
       - name: Dump GitHub context
         env:
