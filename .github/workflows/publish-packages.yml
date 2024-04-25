@@ -15,9 +15,9 @@ jobs:
       - name: Set stages list
         id: set_stages
         run: |
-          Run merged_branch=$(echo "${{ github.event.head_commit.message }}" | sed -n 's/^Merge pull request #\([0-9]\+\) from ${{github.repository_owner}}\/\([^[:space:]]\+\).*$/\2/p' | head -n 1)
-          echo "Merged Branch: $merged_branch"
+          merged_branch=$(echo "${{ github.event.head_commit.message }}" | sed -n 's/^Merge pull request #\([0-9]\+\) from ${{github.repository_owner}}\/\([^[:space:]]\+\).*$/\2/p' | head -n 1)
           echo "$merged_branch" >> $GITHUB_OUTPUT
+          echo "Merged Branch: $merged_branch"
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
