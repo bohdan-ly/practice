@@ -20,7 +20,7 @@ jobs:
           clean_message=$(echo "${{ github.event.head_commit.message }}" | sed 's/\s//g')
           echo "$clean_message"
           merged_branch=$(echo "$clean_message" | nawk -F / '{ if(NF>=3) print $3 }')
-          echo "::set-output name=merged_branch::$merged_branch"
+          echo "$merged_branch" >> $GITHUB_OUTPUT
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
